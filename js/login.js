@@ -16,6 +16,6 @@ botonContrasena.addEventListener("click", function () {
 });
 
 recuperarContraseña.addEventListener('click',()=>{
-    alert('se ha enviado un el correo de recuperación de la contraseña')
+    alert('se ha enviado un correo de recuperación de la contraseña')
 })
 
