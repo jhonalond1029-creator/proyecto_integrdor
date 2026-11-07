@@ -1,0 +1,148 @@
+:root {
+  --azul: #1d5fe8;
+  --azul-oscuro: #0b2a5b;
+  --tarjeta: #ececec;
+  --campo: #d9d9d9;
+  --texto: #1a1a1a;
+  --texto-suave: #6b6b6b;
+  --error: #c62828;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "Inter", "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1290px;
+  margin: 44px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 424px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+aside { display: grid; gap: 28px; }
+
+/* Todas las tarjetas */
+section {
+  background: var(--tarjeta);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+h2 { font-size: 24px; margin-bottom: 8px; }
+
+/* ---------- Formulario ---------- */
+label {
+  display: block;
+  margin-top: 14px;
+  font-size: 17px;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  background: var(--campo);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--texto);
+  outline: none;
+}
+
+input::placeholder { color: var(--texto-suave); }
+input:focus,
+select:focus { border-color: var(--azul); }
+input:user-invalid,
+select:user-invalid { border-color: var(--error); }
+
+button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button[type="submit"] { margin-top: 32px; }
+.btn-primario   { background: var(--azul); color: #fff; }
+.btn-secundario { background: var(--campo); color: var(--texto); }
+
+/* ---------- Panel: bienvenida ---------- */
+aside p {
+  color: var(--texto-suave);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.pasos {
+  list-style: none;
+  counter-reset: paso;
+  display: grid;
+  gap: 14px;
+}
+
+.pasos li {
+  counter-increment: paso;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  column-gap: 14px;
+}
+
+.pasos li::before {
+  content: counter(paso);
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--azul);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.pasos span { color: var(--texto-suave); font-size: 15px; }
+
+/* ---------- Panel: vista previa ---------- */
+.perfil {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0 18px;
+  align-items: center;
+}
+.perfil h2 { grid-column: 1 / -1; margin-bottom: 14px; }
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--azul-oscuro);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 15px; }
+dt { color: var(--texto-suave); }
+dd { font-weight: 600; word-break: break-all; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+}
