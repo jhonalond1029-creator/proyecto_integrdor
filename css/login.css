@@ -1,0 +1,173 @@
+:root{
+    --azul-fondo: #1f3d73;
+    --azul-oscuro: #0c2a63;
+    --azul-boton: #1f4287;
+    --blanco: #ffffff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+    background: var(--azul-fondo);
+    color: var(--blanco);
+}
+
+.login{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 70px 20px 20px;
+}
+
+.login-tarjeta{
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 56px 36px 36px;
+    background: rgb(255, 255, 255, 0.2);
+    border: 1px solid rgb(255, 255, 255, 0.2);
+    border-radius: 14px;
+    text-align: center;
+}
+
+.login-tarjeta h1{
+    font-size: 1.7rem;
+    margin-bottom: 26px;
+}
+
+.logo {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;          
+  background: var(--azul-oscuro);
+  border: 1px solid #2c4f95;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  display: block;
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding: 0 12px;
+    background: rgb(255, 255, 255, 0.22);
+    border: 1px solid rgb(255, 255, 255, 0.35);
+    border-radius: 8px;
+}
+
+.campo:focus-within{
+    background: rgb(255, 255, 255, 0.3);
+    border-color: var(--blanco);
+}
+
+.campo-icono{
+    display: flex;
+    flex: 0 0 22px;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo-icono img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.campo input{
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--blanco);
+    font: inherit;
+    font-size: 0.9rem;
+} 
+
+.campo input::placeholder{
+    color: rgb(255, 255, 255, 0.65);
+}
+
+.campo-ojo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.campo-ojo img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.enlace-chico{
+    display: block;
+    margin-bottom: 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: left;
+    color: var(--blanco);
+}
+
+.mensaje{
+    min-height: 1.3rem;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.mensaje.error {color: #ffd6d6;}
+.mensaje.ok {color: #c4f7d3;}
+
+.btn{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primario{
+    background: var(--azul-boton);
+    color: var(--blanco);
+    border: 1px solid var(--azul-oscuro);
+}
+
+.btn-primario:hover{
+    background: #2a56ad;
+}
+
+.btn-secundario{
+    margin-top: 14px;
+    background: transparent;
+    border: none;
+    color: var(--blanco);
+    text-decoration: none;
+}
