@@ -17,7 +17,30 @@ formLogin.addEventListener('submit',function(e){
     mensaje.textContent = '';
     if(usuario === '' || contrasena === ''){
         alert('todos los campos son abligatorios')
+        mensaje.textContent ="todos los campos son obligatorios"
      return;   
     }
 
+let encontrado;
+if (encontrado){
+    alert ("bienvenido ingreso exitoso")
+    intentos = 0
+
+} else{
+    intentos ++; 
+
+let restantes = maxIntentos - intentos; 
+    if  (intentos >= maxIntentos){
+        alert   ("has superado el numero de intentos")
+        
+    }else{
+        alert ("usuario o contraseña incorrectos");
+        mensaje.textContent="dato incorrecto"
+        inputContrasena.value=""
+        inputContrasena.focus()
+    }
+
+}
+
+ 
 })
