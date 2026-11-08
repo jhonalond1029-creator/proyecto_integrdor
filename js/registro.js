@@ -7,26 +7,54 @@ const repassword = document.querySelector('#repassword')
 const password = document.querySelector('#password')
 const usuario = document.querySelector('#usuario')
 
-formulario.addEventListener('submit', function (event){
+formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    nombre = nombre.value.trim();
-    correo = correo.value.trim();
-    telefono = telefono.value.trim();
-    
-    password = password.value;
-    repassword = repassword.value;
-    usuario = usuario.value.trim();
+
 
     //validar password y repasword
-    if(password != repassword){
+    if (password.value !== repassword.value) {
         alert('la contraseña no coincide');
-    }
-    const newUsuarion = {
-
+        return
     }
 
+    let usuarios = JSON.parse(localStorage.getItem('usuarios'))
+    if (usuarios === null) {
+        usuarios = []
+    }
+
+    let correoExiste = false
+    let usuarioExiste = false
+
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].correo === correo.value) {
+            correoExiste = true
+        }
+        if (usuarios[i].usuario === usuario.value) {
+            usuarioExiste = true
+        }
+    }
+    if (correoExiste === true) {
+        alert('Ese correo ya está registrado')
+        return
+    }
+    if (usuarioExiste === true) {
+        alert('Ese usuario ya existe')
+        return
+    }
 
 
+    const newUsuario = {
+        nombre: nombre.value.trim(),
+        correo: correo.value.trim(),
+        telefono: telefono.value.trim(),
+        password: password.value,
+        usuario: usuario.value.trim()
+    }
 
-} )
+    usuarios.push(newUsuario)
+    localStorage.setItem('usuarios', JSON.stringify(usuarios))
+
+    alert('¡Registro exitoso!')
+    formulario.reset()
+})
