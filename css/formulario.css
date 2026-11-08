@@ -15,7 +15,6 @@ body {
   color: var(--texto);
 }
 
-/* ---------- Layout ---------- */
 main {
   max-width: 1290px;
   margin: 44px auto;
@@ -28,7 +27,6 @@ main {
 
 aside { display: grid; gap: 28px; }
 
-/* Todas las tarjetas */
 section {
   background: var(--tarjeta);
   border-radius: 20px;
@@ -38,7 +36,6 @@ section {
 
 h2 { font-size: 24px; margin-bottom: 8px; }
 
-/* ---------- Formulario ---------- */
 label {
   display: block;
   margin-top: 14px;
@@ -81,7 +78,7 @@ button[type="submit"] { margin-top: 32px; }
 .btn-primario   { background: var(--azul); color: #fff; }
 .btn-secundario { background: var(--campo); color: var(--texto); }
 
-/* ---------- Panel: bienvenida ---------- */
+
 aside p {
   color: var(--texto-suave);
   line-height: 1.5;
@@ -142,7 +139,6 @@ dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 1
 dt { color: var(--texto-suave); }
 dd { font-weight: 600; word-break: break-all; }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   main { grid-template-columns: 1fr; }
 }

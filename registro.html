@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
 
-    <link rel="stylesheet" href="css/registro.css">
+    <script src="js/registro.js" defer></script>
 
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/formulario.css">
 </head>
 
 <body>
 
     <header class="header">
-        <a href="/index.html" class="logo" aria-label="Inicio">
+        <a href="index.html" class="logo" aria-label="Inicio">
             <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
                 <circle cx="24" cy="24" r="24" fill="#10234f" />
                 <path d="M24 9 11 15l13 6 13-6-13-6Z" fill="#fff" />
@@ -23,44 +25,65 @@
         </a>
 
         <nav class="nav" aria-label="Navegación principal">
-            <a href="/index.html">Inicio</a>
+            <a href="index.html">Inicio</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="#formulario" class="activo" aria-current="page">Matricúlate</a>
             <a href="escuelas.html">Escuelas</a>
         </nav>
 
-        <a href="/login.html" class="btn-login">Iniciar Sesión</a>
+        <a href="login.html" class="btn-login">Iniciar Sesión</a>
     </header>
 
-    <section class="tarjeta">
-        <h2>Inscripción</h2>
+    <main>
 
-        <form id="form-registro" novalidate>
-            <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" required />
-            
+        <section id="formulario">
+            <h2>Inscripción</h2>
 
-            <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo" placeholder="Ingrese su dirección de correo" required />
+            <form id="form-registro">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" minlength="3" required>
 
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Número telefónico" required />
-            
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese su dirección de correo" required>
 
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario" placeholder="Ingrese el usuario" required />
-           
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Número telefónico" pattern="[0-9+\s\-]{7,15}" required>
 
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required />
-          
-            <div class="botones">
-                <button type="submit" class="btn btn-primario">Registrar</button>
-                <button type="button" class="btn btn-secundario" id="btn-cancelar">Limpiar</button>
-            </div>
-        </form>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese el usuario" pattern="[a-zA-Z0-9_.\-]{3,}" required>
 
-    </section>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" minlength="6" required>
+
+                <button type="submit" class="btn-primario">Registrar</button>
+                <button type="reset" class="btn-secundario">Limpiar</button>
+            </form>
+        </section>
+
+        <aside>
+            <section>
+                <h2>Bienvenido</h2>
+                <p>Crea tu cuenta en unos minutos y accede a todos los cursos disponibles.</p>
+                <ol class="pasos">
+                    <li><strong>Completa tus datos</strong><span>Nombre, correo, teléfono y usuario.</span></li>
+                    <li><strong>Crea tu contraseña</strong><span>Mínimo 6 caracteres.</span></li>
+                    <li><strong>Presiona Registrar</strong><span>Y ya puedes iniciar sesión.</span></li>
+                </ol>
+            </section>
+
+            <section class="perfil">
+                <h2>Vista previa de tu perfil</h2>
+                <span class="avatar" id="vp-avatar">?</span>
+                <dl>
+                    <dt>Nombre</dt>   <dd id="vp-nombre">—</dd>
+                    <dt>Usuario</dt>  <dd id="vp-usuario">—</dd>
+                    <dt>Correo</dt>   <dd id="vp-correo">—</dd>
+                    <dt>Teléfono</dt> <dd id="vp-telefono">—</dd>
+                </dl>
+            </section>
+        </aside>
+
+    </main>
 
 </body>
 
