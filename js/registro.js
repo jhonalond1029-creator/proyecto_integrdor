@@ -23,6 +23,24 @@ formulario.addEventListener('submit', function (event) {
         usuarios = []
     }
 
+    let hayAdmin = false
+
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].rol === 'administrador') {
+            hayAdmin = true
+        }
+    }
+
+    if (hayAdmin === false) {
+        usuarios.push({
+            usuario: 'admin',
+            correo: 'admin@correo.com',
+            contrasena: 'admin123',
+            rol: 'administrador'
+        })
+        localStorage.setItem('usuarios', JSON.stringify(usuarios))
+    }
+
     let correoExiste = false
     let usuarioExiste = false
 
@@ -49,7 +67,9 @@ formulario.addEventListener('submit', function (event) {
         correo: correo.value.trim(),
         telefono: telefono.value.trim(),
         password: password.value,
-        usuario: usuario.value.trim()
+        usuario: usuario.value.trim(),
+        rol: 'estudiante'
+
     }
 
     usuarios.push(newUsuario)

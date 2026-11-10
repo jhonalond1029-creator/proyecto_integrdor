@@ -44,6 +44,8 @@ formLogin.addEventListener('submit', function (e) {
     if (encontrado) {
         alert("Bienvenido, ingreso exitoso");
         intentos = 0;
+        
+        window.location.href = 'estudiante.html'
         // window.location.href = "index.html";  
 
         
