@@ -1,0 +1,17 @@
+:root {
+    --azul: #2451d6;
+    --azul-oscuro: #1b3fa8;
+    --azul-suave: #e8eefc;
+    --oscuro: #0f1b33;
+    --medio: #16295c;
+    --texto: #14213d;
+    --gris: #6b7280;
+    --fondo: #f6f5f2;
+    --blanco: #fff;
+    --borde: #e3e1db;
+
+    --fuente: "Manrope", sans-serif;
+
+    --radio: 10px;
+    --sombra: 0 4px 16px rgba(0, 0, 0, 0.06);
+}

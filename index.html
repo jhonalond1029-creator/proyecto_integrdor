@@ -3,35 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>RegisColegio | Plataforma Academica</title>
 
-    <link rel="stylesheet" href="css/registro.css">
-    
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/secciones.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    
-    <header class="header">
+
+    <header class="encabezado">
         <a href="index.html" class="logo" aria-label="Inicio">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-                <circle cx="24" cy="24" r="24" fill="#10234f"/>
-                <path d="M24 9 11 15l13 6 13-6-13-6Z" fill="#fff"/>
-                <path d="M16 19v4c0 2 3.6 4 8 4s8-2 8-4v-4l-8 3.7L16 19Z" fill="#fff"/>
-                <path d="M17 31v5a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-5" fill="none" stroke="#fff" stroke-width="2.5"/>
-            </svg>
+            <img src="img/logo.png" alt="Logo de RegisColegio">
         </a>
 
-        <nav class="nav" aria-label="Navegación principal">
-            <a href="index.html">Inicio</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="registro.html" class="activo" aria-current="page">Matricúlate</a>
-            <a href="escuelas.html">Escuelas</a>
+        <nav class="menu">
+            <ul class="menu-lista">
+                <li><a href="index.html" class="menu-enlace">Inicio</a></li>
+                <li><a href="index.html#nosotros" class="menu-enlace">Nosotros</a></li>
+                <li><a href="registro.html" class="menu-enlace activo" aria-current="page">Matricúlate</a></li>
+                <li class="desplegable">
+                    <a href="index.html#escuelas" class="menu-enlace">Escuelas</a>
+                    <ul class="submenu">
+                        <li><a href="index.html#escuelas">Tecnología</a></li>
+                        <li><a href="index.html#escuelas">Administración</a></li>
+                        <li><a href="index.html#escuelas">Diseño</a></li>
+                        <li><a href="index.html#escuelas">Comercio</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
-        <a href="/login.html" class="btn-login">Iniciar Sesión</a>
+
+        <a href="login.html" class="boton">Iniciar Sesión</a>
     </header>
 
+    <main>
 
+        <section id="inicio" class="hero">
+            <h1 class="hero-titulo">Plataforma Academica RegisColegio</h1>
+            <p class="hero-texto">
+                Sistema pensado para registrar estudiantes, consultar materias
+                y organizar horarios academicos de forma sencilla.
+            </p>
+            <p class="hero-texto">
+                Permite visualizar informacion estudiantil, materias disponibles
+                y jornadas academicas.
+            </p>
+            <a href="#matriculate" class="boton hero-boton">Comenzar</a>
+            <img src="img/seccion2.png" alt="Estudiantes usando tabletas en un salon de clases" class="hero-imagen">
+        </section>
 
+        <section id="nosotros" class="seccion seccion-nosotros">
+            <p class="antetitulo">Nosotros</p>
+            <h2 class="seccion-titulo">Comprometidos con la educacion</h2>
+            <p class="seccion-texto">
+                En RegisColegio trabajamos para transformar la educacion a traves
+                de la tecnologia. Nuestro objetivo es brindar a estudiantes y docentes
+                una plataforma intuitiva, segura y eficiente para gestionar la
+                informacion academica y potenciar el aprendizaje.
+            </p>
+
+            <ul class="pilares">
+                <li>
+                    <img src="img/iconos/mision.png" alt="">
+                    <h3>Nuestra Mision</h3>
+                    <p>Facilitar la gestion academica y mejorar la experiencia educativa.</p>
+                </li>
+                <li>
+                    <img src="img/iconos/vision.png" alt="">
+                    <h3>Nuestra Vision</h3>
+                    <p>Ser la plataforma educativa lider en innovacion y transformacion digital.</p>
+                </li>
+                <li>
+                    <img src="img/iconos/valores.png" alt="">
+                    <h3>Nuestros Valores</h3>
+                    <p>Compromiso, innovacion, respeto y trabajo en equipo.</p>
+                </li>
+            </ul>
+
+            <ul class="cifras">
+                <li><strong>+1,200</strong> Estudiantes registrados</li>
+                <li><strong>+25</strong> Escuelas activas</li>
+                <li><strong>+300</strong> Cursos disponibles</li>
+                <li><strong>+5,000</strong> Jornadas academicas</li>
+            </ul>
+        </section>
+
+        <section id="escuelas" class="seccion seccion-escuelas">
+            <p class="antetitulo">Escuelas</p>
+            <h2 class="seccion-titulo">Soluciones educativas para cada institucion</h2>
+            <p class="seccion-texto">
+                RegisColegio ofrece herramientas disenadas para instituciones
+                educativas que buscan modernizar sus procesos, mejorar la
+                comunicacion y potenciar el aprendizaje de sus estudiantes.
+            </p>
+
+            <ul class="beneficios">
+                <li>
+                    <img src="img/iconos/gestion.png" alt="">
+                    <h3>Gestion academica</h3>
+                    <p>Organiza matriculas, calificaciones, asistencias y mas en un solo lugar.</p>
+                </li>
+                <li>
+                    <img src="img/iconos/comunicacion.png" alt="">
+                    <h3>Comunicacion efectiva</h3>
+                    <p>Conecta a docentes, estudiantes y familias de forma rapida y segura.</p>
+                </li>
+            </ul>
+
+            <img src="img/seccion3.png" alt="Docente acompanando a estudiantes en clase" class="escuelas-imagen">
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 RegisColegio</p>
+        <p>Todos los derechos reservados</p>
+    </footer>
 
 </body>
 </html>

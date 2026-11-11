@@ -1,0 +1,87 @@
+/* tablet */
+@media (max-width: 900px) {
+    .encabezado {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+    }
+
+    .menu-lista {
+        justify-content: center;
+        gap: 24px;
+    }
+
+    /* todo pasa a una sola columna */
+    .contenido,
+    .hero,
+    .seccion-escuelas {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .hero {
+        grid-template-areas: "titulo" "texto1" "texto2" "boton" "imagen";
+        padding: 50px 20px;
+    }
+
+    .seccion-escuelas {
+        grid-template-areas: "antetitulo" "titulo" "texto" "beneficios" "imagen";
+    }
+
+    .seccion {
+        padding: 60px 20px;
+    }
+
+    .hero-titulo,
+    .seccion-titulo {
+        font-size: 32px;
+    }
+
+    .hero-imagen,
+    .escuelas-imagen {
+        margin-top: 30px;
+    }
+
+    .pilares {
+        grid-template-columns: 1fr;
+    }
+
+    .cifras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .submenu {
+        left: auto;
+        right: 0;
+    }
+}
+
+/* celular */
+@media (max-width: 600px) {
+    .menu-lista {
+        gap: 16px;
+    }
+
+    .menu-enlace {
+        font-size: 13px;
+    }
+
+    .hero-titulo,
+    .seccion-titulo {
+        font-size: 26px;
+    }
+
+    .hero-boton {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .tarjeta-formulario,
+    .tarjeta-lateral {
+        padding: 20px;
+    }
+}

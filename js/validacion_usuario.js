@@ -50,9 +50,11 @@ formLogin.addEventListener('submit', function (e) {
 
         //si aquí se encontró el usuario y conincide con la contraseña hay que guardar los datos de la sesion
 
-
-        
-        window.location.href = 'estudiante.html'// si es un estudiante  
+        if (encontrado.rol === 'administrador') {
+            window.location.href = 'admin.html' // redireccionar a la pagina de administrador
+        } else {
+            window.location.href = 'estudiante.html' // redireccionar a la pagina de estudiante
+        }
 
         
     } else {
