@@ -23,30 +23,36 @@ formLogin.addEventListener('submit', function (e) {
         return;
     }
 
+    //traer usuarios del local storage
     let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+
     if (usuarios === null) {
         usuarios = [];
     }
 
-    // 3. Buscar una coincidencia, ficha por ficha
-    let encontrado = false;
+    let encontrado = null;
 
     for (let i = 0; i < usuarios.length; i++) {
         let coincideUsuario = usuarios[i].usuario === usuario;
         let coincideClave = usuarios[i].password === contrasena;
 
         if (coincideUsuario && coincideClave) {
-            encontrado = true;
+            encontrado = usuarios[i];
         }
     }
 
    
-    if (encontrado) {
-        alert("Bienvenido, ingreso exitoso");
-        intentos = 0;
+    if (encontrado !== null) {
+
         
-        window.location.href = 'estudiante.html'
-        // window.location.href = "index.html";  
+        alert("Bienvenido,"+encontrado.nombre+" ingreso exitoso");
+        intentos = 0;
+
+        //si aquí se encontró el usuario y conincide con la contraseña hay que guardar los datos de la sesion
+
+
+        
+        window.location.href = 'estudiante.html'// si es un estudiante  
 
         
     } else {
@@ -55,10 +61,7 @@ formLogin.addEventListener('submit', function (e) {
 
         if (intentos >= maxIntentos) {
             alert("Has superado el número de intentos");
-            mensaje.textContent = "Acceso bloqueado";
-            inputUsuario.disabled = true;
-            inputContrasena.disabled = true;
-            btnLogin.disabled = true;
+            window.location.href = 'registro.html'
         } else {
             mensaje.textContent = `Usuario o contraseña incorrectos. Te quedan ${restantes} intentos`;
             inputContrasena.value = "";

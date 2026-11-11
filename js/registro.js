@@ -71,10 +71,10 @@ formulario.addEventListener('submit', function (event) {
         rol: 'estudiante'
 
     }
-
     usuarios.push(newUsuario)
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
     alert('¡Registro exitoso!')
     formulario.reset()
+    window.location.href = 'estudiante.html'
 })
